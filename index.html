@@ -69,7 +69,7 @@
         }
 
         #nav-icons {
-            display: flex;
+            display: none; /* Hide navigation icons by default */
             gap: 20px;
         }
 
@@ -78,21 +78,35 @@
             text-decoration: none;
             font-size: 18px;
         }
+
+        /* Media query for mobile devices */
+        @media (max-width: 767px) {
+            #character-container {
+                display: none; /* Hide character container on small screens */
+            }
+
+            #iframe-container {
+                flex: 1; /* Take 100% of horizontal space on small screens */
+                border-radius: 0; /* Remove border-radius on small screens */
+            }
+
+            #nav-icons {
+                display: flex; /* Display navigation icons on small screens */
+            }
+        }
     </style>
 </head>
 <body>
     <div id="navbar">
-    <div id="logo">
-        J.A.R.V.I.S.
-    </div>
+        <div id="logo">
+            J.A.R.V.I.S.
+        </div>
         <div id="nav-icons">
             <a href="https://huggingface.co/DavidFernandes">ImageGen</a>
             <a href="https://huggingface.co/DavidFernandes">Coding</a>
             <a href="https://huggingface.co/DavidFernandes">VisualQnA</a>
             <a href="https://huggingface.co/DavidFernandes">TryEmoji</a>
             <a href="https://huggingface.co/DavidFernandes">MagicVocals</a>
-
-            <!-- Add more pages as needed -->
         </div>
     </div>
     <div id="content-container">
