@@ -1,13 +1,107 @@
 <!DOCTYPE html>
-<html>
-	
-	<head>
-		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
-	</head>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J.A.R.V.I.S.</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            background-color: #161616;
+            font-family: Arial, sans-serif;
+            overflow: hidden; /* Disable scrolling */
+        }
 
-    <script
-	type="module"
-	src="https://gradio.s3-us-west-2.amazonaws.com/3.45.1/gradio.js"
-></script>
-<gradio-app src="https://davidfernandes-mistral-7b-instruct.hf.space"></gradio-app>
+        #logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #3096F4;
+            font-size: 30px;
+            font-weight: bold;
+            font-family: 'Courier New', Courier, monospace;
+            height: 10%;
+        }
+
+        #content-container {
+            display: flex;
+            flex: 1; /* Takes remaining vertical space */
+        }
+
+        #character-container {
+            flex: 0.3; /* Takes 30% of horizontal space */
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 10px;
+        }
+
+        #character-container img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border-radius: 15px;
+        }
+
+        #iframe-container {
+            flex: 0.7; /* Takes 70% of horizontal space */
+            margin-left: 10px;
+            margin-right: 10px;
+            overflow: hidden;
+            border-radius: 15px;
+        }
+
+        iframe {
+            border: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        #navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #161616;
+            padding: 10px;
+        }
+
+        #nav-icons {
+            display: flex;
+            gap: 20px;
+        }
+
+        #nav-icons a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+    <div id="logo">
+        J.A.R.V.I.S.
+    </div>
+        <div id="nav-icons">
+            <a href="https://huggingface.co/DavidFernandes">ImageGen</a>
+            <a href="https://huggingface.co/DavidFernandes">Coding</a>
+            <a href="https://huggingface.co/DavidFernandes">VisualQnA</a>
+            <a href="https://huggingface.co/DavidFernandes">TryEmoji</a>
+            <a href="https://huggingface.co/DavidFernandes">MagicVocals</a>
+
+            <!-- Add more pages as needed -->
+        </div>
+    </div>
+    <div id="content-container">
+        <div id="character-container">
+            <img src="char2.jpeg" alt="Character">
+        </div>
+        <div id="iframe-container">
+            <iframe src="https://davidfernandes-ultron.hf.space" width="100%" height="100%"></iframe>
+        </div>
+    </div>
+</body>
 </html>
